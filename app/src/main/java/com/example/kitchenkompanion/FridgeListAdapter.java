@@ -5,11 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.kitchenkompanion.ui.fridge.FridgeFragment;
 
 public class FridgeListAdapter extends BaseAdapter {
 
@@ -69,5 +66,8 @@ public class FridgeListAdapter extends BaseAdapter {
         ownerimage.setImageResource(ownerimages[i]);
 
         return view;
+    }
+
+    public static class HomePage {
     }
 }
