@@ -1,11 +1,15 @@
 package com.example.kitchenkompanion.ui.users;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,10 +28,13 @@ public class UserFragment extends Fragment {
 
     private FragmentUsersBinding binding;
 
-    EditText username;
-    EditText password;
-    TextView current_user;
-    ImageView current_user_image;
+    private EditText username;
+    private EditText password;
+    private TextView current_user;
+    private ImageView current_user_image;
+    private MaterialButton loginbtn;
+    private TextView passwords;
+    private LinearLayout socials;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -55,10 +62,7 @@ public class UserFragment extends Fragment {
             current_user_image.setImageResource(R.drawable.private_list_owner4);
         }
 
-        MaterialButton loginbtn = root.findViewById(R.id.loginbtn);
-
-        //admin and admin
-
+        loginbtn = root.findViewById(R.id.loginbtn);
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +103,27 @@ public class UserFragment extends Fragment {
                     Toast.makeText(getActivity(),"LOGIN FAILED. INCORRECT USERNAME OR PASSWORD",Toast.LENGTH_SHORT).show();
                     username.setText("");
                     password.setText("");
+            }
+        });
+
+        passwords = root.findViewById(R.id.forgotpass);
+        passwords.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)  {
+                String toast_text = "User 1: “Charlie”,  Password: “user1”\n" +
+                                    "User 2: “Max”,  Password: “user2”\n" +
+                                    "User 3: “Zach”,  Password: “user3”\n" +
+                                    "User 4: “Matarr”,  Password: “user4”";
+                Toast.makeText(getActivity(),toast_text,Toast.LENGTH_LONG).show();
+            }
+        });
+
+        socials = root.findViewById(R.id.socialicons);
+        socials.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)  {
+                String toast_text = "SOCIAL MEDIA LOGIN NOT IMPLEMENTED";
+                Toast.makeText(getActivity(),toast_text,Toast.LENGTH_SHORT).show();
             }
         });
 

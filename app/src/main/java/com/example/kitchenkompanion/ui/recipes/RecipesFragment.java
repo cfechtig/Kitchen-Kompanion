@@ -26,6 +26,8 @@ import com.example.kitchenkompanion.MainActivity;
 import com.example.kitchenkompanion.R;
 import com.example.kitchenkompanion.databinding.FragmentRecipesBinding;
 
+import java.util.Arrays;
+
 public class RecipesFragment extends Fragment {
 
     private FragmentRecipesBinding binding;
@@ -250,5 +252,7 @@ public class RecipesFragment extends Fragment {
             }
         });
     }
+
+
 
 }

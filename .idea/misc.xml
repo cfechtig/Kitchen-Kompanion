@@ -26,6 +26,7 @@
         <entry key="..\:/Users/Charlie/AndroidStudioProjects/Kitchen-Kompanion/app/src/main/res/layout/recipe_filter__popup.xml" value="0.559375" />
         <entry key="..\:/Users/Charlie/AndroidStudioProjects/Kitchen-Kompanion/app/src/main/res/layout/shop_add_layout.xml" value="0.559375" />
         <entry key="..\:/Users/Charlie/AndroidStudioProjects/Kitchen-Kompanion/app/src/main/res/layout/shop_confirm_purchase_popup.xml" value="0.18796992481203006" />
+        <entry key="..\:/Users/Charlie/AndroidStudioProjects/Kitchen-Kompanion/app/src/main/res/layout/shop_confirm_purchase_popup1.xml" value="0.3859375" />
         <entry key="..\:/Users/Charlie/AndroidStudioProjects/Kitchen-Kompanion/app/src/main/res/layout/shop_list_layout.xml" value="0.559375" />
         <entry key="..\:/Users/Charlie/AndroidStudioProjects/Kitchen-Kompanion/app/src/main/res/layout/shop_select_preset_list.xml" value="0.559375" />
         <entry key="..\:/Users/Charlie/AndroidStudioProjects/Kitchen-Kompanion/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5507692307692308" />
@@ -106,7 +107,6 @@
         <entry key="app/src/main/res/layout/fridge_direct_add_duplicate_popup.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/fridge_direct_add_empty_popup.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/fridge_item_information_popup.xml" value="0.15520833333333334" />
-        <entry key="app/src/main/res/layout/recipe_activity.xml" value="0.335" />
         <entry key="app/src/main/res/layout/shop_confirm_purchase_popup.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/shop_confirm_purchase_popup1.xml" value="0.22806961624710648" />
         <entry key="app/src/main/res/layout/shop_save_current_empty_error_popup.xml" value="0.15520833333333334" />
