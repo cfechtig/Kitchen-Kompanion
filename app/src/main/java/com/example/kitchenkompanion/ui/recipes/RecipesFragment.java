@@ -139,6 +139,37 @@ public class RecipesFragment extends Fragment {
                             }
                         });
 
+                        advanced.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if(str_meal.equals("Breakfast")){
+                                    recipe_names = MainActivity.advanced_breakfast_names;
+                                    list_images = MainActivity.advanced_breakfast_list_image;
+                                    recipe_image = MainActivity.advanced_breakfast_recipe_image;
+                                    recipe_list = MainActivity.advanced_breakfast_recipe_list;
+                                    refreshList(root);
+                                    dialog.dismiss();
+                                }
+                                else if(str_meal.equals("Lunch")){
+                                    recipe_names = MainActivity.advanced_lunch_names;
+                                    list_images = MainActivity.advanced_lunch_list_image;
+                                    recipe_image = MainActivity.advanced_lunch_recipe_image;
+                                    recipe_list = MainActivity.advanced_lunch_recipe_list;
+                                    refreshList(root);
+                                    dialog.dismiss();
+                                }
+                                else if(str_meal.equals("Dinner")){
+                                    recipe_names = MainActivity.advanced_dinner_names;
+                                    list_images = MainActivity.advanced_dinner_list_image;
+                                    recipe_image = MainActivity.advanced_dinner_recipe_image;
+                                    recipe_list = MainActivity.advanced_dinner_recipe_list;
+                                    refreshList(root);
+                                    dialog.dismiss();
+                                }
+                            }
+
+                        });
+
                         //When no button is clicked but clicker interacted with
                         if(str_meal.equals("All Meals")){
                             recipe_names = MainActivity.recipe_names;
@@ -186,6 +217,7 @@ public class RecipesFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
         return root;
     }
 
@@ -205,6 +237,18 @@ public class RecipesFragment extends Fragment {
         listview = (ListView) root.findViewById(R.id.recipe_list);
         RecipeListAdapter rla = new RecipeListAdapter(getActivity(), recipe_names, list_images, recipe_image, recipe_list);
         listview.setAdapter(rla);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(context,RecipeActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("recipe_name", rla.getItem(i));
+                bundle.putInt("food_pic", rla.getFoodPic(i));
+                bundle.putInt("recipe_pic", rla.getRecipePic(i));
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 
 }

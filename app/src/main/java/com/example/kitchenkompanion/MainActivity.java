@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.recipe_chickenparmesan_image, R.drawable.recipe_waffles_image, R.drawable.recipe_bakedpotato_image, R.drawable.recipe_chickenpotpie_image};
     public static int recipe_list[] = {R.drawable.recipe_pancake, R.drawable.recipe_tacomeat, R.drawable.recipe_lasagna, R.drawable.recipe_bananabread, R.drawable.recipe_macandcheese,
             R.drawable.recipe_chickenparm, R.drawable.recipe_waffles, R.drawable.recipe_bakedpotato, R.drawable.recipe_chickenpotpie};
-
+    //breakfast
     public static String breakfast_names[] = {"Chocolate Chip Pancakes", "Waffles"};
     public static int breakfast_list_image[] = {R.drawable.private_list_owner4, R.drawable.private_list_owner3};
     public static int breakfast_recipe_image[] = {R.drawable.recipe_pancakes_image, R.drawable.recipe_waffles_image};
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     //advanced breakfast
     public static String advanced_breakfast_names[] = {"Waffles"};
-    public static int advanced_breakfast_list_image[] = {R.drawable.private_list_owner4};
+    public static int advanced_breakfast_list_image[] = {R.drawable.private_list_owner3};
     public static int advanced_breakfast_recipe_image[] = {R.drawable.recipe_waffles_image};
     public static int advanced_breakfast_recipe_list[] = {R.drawable.recipe_waffles};
 
