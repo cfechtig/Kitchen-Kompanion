@@ -63,6 +63,7 @@ public class FridgeFragment extends Fragment {
     private AlertDialog.Builder dialogBuilder1;
     private AlertDialog dialog1;
     private Button confirm_no_empty;
+    private TextView line1, line2;
 
     //Duplicate Item Added Popup Information
     private AlertDialog.Builder dialogBuilder2;
@@ -189,7 +190,9 @@ public class FridgeFragment extends Fragment {
                 Boolean private_list = direct_add_toggle.isChecked();
                 //if empty info, create warning
                 if (item_name.isEmpty()|| item_count.isEmpty()) {
-                    emptyTextPopup();
+                    emptyTextPopup(false);
+                } else if (item_count.equals("0")) {
+                    emptyTextPopup(true);
                 } else if (private_list == true) {
                     item_count = item_count + " " + item_counter;
                     boolean dupe_found = false;
@@ -321,6 +324,10 @@ public class FridgeFragment extends Fragment {
             privateList = false;
             switch_list_button.setText("Switch to Private");
             food_owner.setText("Communal");
+            switch_list_button.setVisibility(View.VISIBLE);
+            remove_button.setVisibility(View.VISIBLE);
+            increase_button.setVisibility(View.VISIBLE);
+            decrease_button.setVisibility(View.VISIBLE);
         }
 
         //set text fields to match current item
@@ -587,14 +594,21 @@ public class FridgeFragment extends Fragment {
     }
 
     //make empty text popup
-    public void emptyTextPopup() {
+    public void emptyTextPopup(boolean flag) {
         dialogBuilder1 = new AlertDialog.Builder(thisContext);
         final View emptyPopupView = getLayoutInflater().inflate(R.layout.fridge_direct_add_empty_popup, null);
         confirm_no_empty = (Button) emptyPopupView.findViewById(R.id.return_button);
+        line1 = (TextView) emptyPopupView.findViewById(R.id.empty_text);
+        line2 = (TextView) emptyPopupView.findViewById(R.id.empty_text1);
 
         dialogBuilder1.setView(emptyPopupView);
         dialog1 = dialogBuilder1.create();
         dialog1.show();
+
+        if (flag) {
+            line1.setText("Quantity of 0 Detected");
+            line2.setText("Please Enter a Quantity Greater Than 0");
+        }
 
         confirm_no_empty.setOnClickListener(new View.OnClickListener() {
             @Override
