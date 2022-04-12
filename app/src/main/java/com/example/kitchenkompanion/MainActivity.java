@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     //Data for Communal Items
     public static String communal_items[] = {"Apple", "Banana", "Milk", "Soda", "Bread", "Cake", "Flour", "Raw Beef"};
     public static int communal_images[] = {R.drawable.food_apple, R.drawable.food_banana, R.drawable.food_milk, R.drawable.food_soda, R.drawable.food_bread, R.drawable.food_cake, R.drawable.food_flour, R.drawable.food_raw_meat};
-    public static String communal_count[] = {"1  " ,"2  ", "1 Gal", "2 Gal", "1 Loaf", "2 Slice", "3 Pound", "2  Pound"};
+    public static String communal_count[] = {"1  " ,"2  ", "1 Gal", "2 Gal", "1 Loaf", "2 Slice", "3 Pound", "2 Pound"};
     public static int communal_onwer_images[] = {R.drawable.communal_list_item, R.drawable.communal_list_item, R.drawable.communal_list_item,R.drawable.communal_list_item,R.drawable.communal_list_item,R.drawable.communal_list_item,R.drawable.communal_list_item,R.drawable.communal_list_item};
     public static String communal_purchase_dates[] = {"03/29/22", "01/22/22", "01/02/22", "02/25/22", "03/12/22", "11/16/21", "03/28/22", "02/09/22"};
     //Data for Private Items

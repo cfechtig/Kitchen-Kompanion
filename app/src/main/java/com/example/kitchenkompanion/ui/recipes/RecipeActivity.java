@@ -66,55 +66,75 @@ public class RecipeActivity extends AppCompatActivity {
     }
 
     public void confirmAddPopup(String recipe_name) {
-        if (recipe_name.equals("Baked Potato") || recipe_name.equals("Chocolate Chip Pancakes")) {
-            dialogBuilder5 = new AlertDialog.Builder(this);
-            final View confirmPurchasePopup = getLayoutInflater().inflate(R.layout.shop_confirm_purchase_popup1, null);
-            no_purchase_button = (Button) confirmPurchasePopup.findViewById(R.id.cancel_button77);
-            purchase_button = (Button) confirmPurchasePopup.findViewById(R.id.confirm_button77);
-            purchase_message = (TextView) confirmPurchasePopup.findViewById(R.id.remove_confirm_text);
+        dialogBuilder5 = new AlertDialog.Builder(this);
+        final View confirmPurchasePopup = getLayoutInflater().inflate(R.layout.shop_confirm_purchase_popup1, null);
+        no_purchase_button = (Button) confirmPurchasePopup.findViewById(R.id.cancel_button77);
+        purchase_button = (Button) confirmPurchasePopup.findViewById(R.id.confirm_button77);
+        purchase_message = (TextView) confirmPurchasePopup.findViewById(R.id.remove_confirm_text);
 
-            dialogBuilder5.setView(confirmPurchasePopup);
-            dialog5 = dialogBuilder5.create();
-            dialog5.show();
+        dialogBuilder5.setView(confirmPurchasePopup);
+        dialog5 = dialogBuilder5.create();
+        dialog5.show();
 
-            String[] item_names;
-            String[] item_counts;
+        String[] item_names;
+        String[] item_counts;
 
-            if (recipe_name.equals("Baked Potato")) {
-                item_names = new String[]{"Potato", "Olive Oil", "Garlic Powder", "Paprika"};
-                item_counts = new String[]{"1 ", "1 ", "1 ", "1 "};
-            } else {
-                item_names = new String[]{"Flour", "Sugar", "Cinnamon", "Baking Powder", "Egg", "Milk", "Butter", "Vanilla", "Chocolate Chips"};
-                item_counts = new String[]{"1 ", "1 ", "1 ", "1 ", "2 ", "1 ", "4 ", "1 ", "1 "};
-            }
-
-            String message = "Add these items to Shopping List?\n";
-            for (int i = 0; i < item_names.length; i++) {
-                message += item_counts[i].trim() + " " + item_names[i].trim() + "\n";
-            }
-
-            purchase_message.setText(message);
-
-            no_purchase_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog5.dismiss();
-                }
-            });
-
-            purchase_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    for (int i = 0; i < item_names.length; i++) {
-                        MainActivity.addToShoppingList(item_names[i], item_counts[i], false);
-                    }
-                    Toast.makeText(getApplicationContext(),"Items added",Toast.LENGTH_SHORT).show();
-                    dialog5.dismiss();
-                }
-            });
+        if (recipe_name.equals("Chocolate Chip Pancakes")) {
+            item_names = new String[]{"Flour", "Sugar", "Cinnamon", "Baking Powder", "Egg", "Milk", "Butter", "Vanilla", "Chocolate Chips"};
+            item_counts = new String[]{"1 Cup", "1 Tbsp", "1 Tsp", "1 Tbsp", "2 ", "1 Cup", "4 Tbsp", "1 Tsp", "1 Cup"};
+        } else if (recipe_name.equals("Taco Meat")) {
+            item_names = new String[]{"Raw Beef", "Flour", "Chilli Powder", "Onion", "Paprika", "Onion Powder", "Garlic Powder", "Cumin"};
+            item_counts = new String[]{"1 Pound", "1 Cup", "1 Tbsp", "1 Cup", "1 Tsp", "1 Tsp", "1 Tsp", "1 Tsp"};
+        } else if (recipe_name.equals("Lasagna")) {
+            item_names = new String[]{"Lasagna Noodles", "Egg", "Cheese", "Raw Beef", "Sauce"};
+            item_counts = new String[]{"1 ", "2 ", "2 Pound", "1 Pound", "2 Pound"};
+        } else if (recipe_name.equals("Banana Bread")) {
+            item_names = new String[]{"Butter", "Sugar", "Egg", "Vanilla", "Banana", "Baking Powder", "Heavy Cream"};
+            item_counts = new String[]{"5 Tbsp", "1 Cup", "2 ", "1 Tsp ", "2 ", "1 Tsp", "1 Cup"};
+        } else if (recipe_name.equals("Homemade Mac and Cheese")) {
+            item_names = new String[]{"Elbow Macaroni", "Butter", "Flour", "Cheese"};
+            item_counts = new String[]{"1 ", "3 Tbsp", "1 Tbsp", "1 Pound"};
+        } else if (recipe_name.equals("Chicken Parmesan")) {
+            item_names = new String[]{"Chicken Breast", "Egg", "Sauce", "Cheese"};
+            item_counts = new String[]{"2 ", "1 ", "2 Pound", "1 Cup"};
+        } else if (recipe_name.equals("Classic Waffles")) {
+            item_names = new String[]{"Egg", "Flour", "Baking Powder", "Sugar", "Milk", "Butter"};
+            item_counts = new String[]{"2 ", "1 Cup", "1 Tsp", "1 Tbsp", "1 Cup", "4 Tbsp"};
+        } else if (recipe_name.equals("Baked Potato")) {
+            item_names = new String[]{"Potato", "Olive Oil", "Garlic Powder", "Paprika"};
+            item_counts = new String[]{"1 ", "1 ", "1 ", "1 "};
+        } else if (recipe_name.equals("Chicken Pot Pie")) {
+            item_names = new String[]{"Pastry", "Butter", "Flour", "Chicken Broth", "Heavy Cream", "Chicken Breast"};
+            item_counts = new String[]{"1 ", "2 Tbsp", "2 Tbsp", "1 Cup", "1 Cup", "2"};
         } else {
-            Toast.makeText(getApplicationContext(),"CAN ONLY ADD ITEMS FOR\n\"Baked Potato\"\n or \n\"Chocolate Chip Pancakes\"",Toast.LENGTH_SHORT).show();
+            item_names = new String[]{""};
+            item_counts = new String[]{" "};
         }
+
+        String message = "Add these items to Shopping List?\n";
+        for (int i = 0; i < item_names.length; i++) {
+            message += item_counts[i].trim() + " " + item_names[i].trim() + "\n";
+        }
+
+        purchase_message.setText(message);
+
+        no_purchase_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog5.dismiss();
+            }
+        });
+
+        purchase_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for (int i = 0; i < item_names.length; i++) {
+                    MainActivity.addToShoppingList(item_names[i], item_counts[i], false);
+                }
+                Toast.makeText(getApplicationContext(),"Items added",Toast.LENGTH_SHORT).show();
+                dialog5.dismiss();
+            }
+        });
     }
 
     @Override

@@ -193,7 +193,7 @@ public class ShopFragment extends Fragment {
         //numbers only for quantity input
         direct_count.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
         //set selection of choices for number counters
-        String[] counters = new String[]{"None", "Gal", "Pound", "Slice", "Loaf"};
+        String[] counters = new String[]{"None", "Gal", "Pound", "Cup", "Slice", "Loaf", "Tbsp", "Tsp"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(thisContext, android.R.layout.simple_spinner_dropdown_item, counters);
         counter_dropdown.setAdapter(adapter);
 
@@ -217,6 +217,7 @@ public class ShopFragment extends Fragment {
                 } else if (Arrays.asList(MainActivity.shopping_list).contains(item_name)) {
                     item_count = item_count + " " + item_counter;
                     //if duplicate item added, create warning
+                    item_count = item_count + " " + item_counter;
                     duplicateItemPopup(item_name, item_count, private_list);
                 } else {
                     item_count = item_count + " " + item_counter;

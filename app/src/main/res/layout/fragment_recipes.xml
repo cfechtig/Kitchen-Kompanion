@@ -11,9 +11,9 @@
     <ListView
         android:id="@+id/recipe_list"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="80dp"
         android:divider="@color/black"
         android:dividerHeight="0dp"
         app:layout_constraintBottom_toBottomOf = "parent"

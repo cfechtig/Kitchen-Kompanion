@@ -171,7 +171,7 @@ public class FridgeFragment extends Fragment {
         //numbers only for quantity input
         direct_count.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
         //set selection of choices for number counters
-        String[] counters = new String[]{"None", "Gal", "Pound", "Slice", "Loaf"};
+        String[] counters = new String[]{"None", "Gal", "Pound", "Cup", "Slice", "Loaf", "Tbsp", "Tsp"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(thisContext, android.R.layout.simple_spinner_dropdown_item, counters);
         counter_dropdown.setAdapter(adapter);
 
@@ -219,6 +219,7 @@ public class FridgeFragment extends Fragment {
                     //add item normally
 
                     if (dupe_found == true) {
+                        item_count = item_count + " " + item_counter;
                         duplicateItemPopup(item_name, item_count, private_list);
                     } else {
                         //add to private list
@@ -229,6 +230,7 @@ public class FridgeFragment extends Fragment {
                 } else {
                     //if duplicate item added, create warning
                     if (Arrays.asList(MainActivity.communal_items).contains(item_name)) {
+                        item_count = item_count + " " + item_counter;
                         duplicateItemPopup(item_name, item_count, private_list);
                     } else {
                         //add to communal list
