@@ -39,6 +39,7 @@ public class RecipesFragment extends Fragment {
     AlertDialog.Builder dialogBuilder;
     Context context;
     private AlertDialog dialog;
+    private Button close_explore;
 
     //ListAdapter Parameters
     public static String[] recipe_names = MainActivity.recipe_names;
@@ -74,6 +75,13 @@ public class RecipesFragment extends Fragment {
                 Button intermediate = (Button)dialog.findViewById(R.id.intermediateButton);
                 Button advanced = (Button)dialog.findViewById(R.id.advancedButton);
                 Spinner meal = (Spinner) dialog.findViewById(R.id.meal_spinner);
+                close_explore = (Button) dialog.findViewById(R.id.filter_close);
+                close_explore.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
                 meal.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
